@@ -1,0 +1,537 @@
+/*
+    FUN WEATHER v0.1 Alfa
+    Write by Victor Lucas
+*/
+
+@import 'reset';
+@import 'colors';
+@import 'variables';
+
+body {
+    background: url('../img/bg.png') $white;
+    font: $fontSize $font;
+}
+
+.header {
+    background: $primary;
+    height:  100vh;
+    min-height: 100vh;
+    border-bottom-left-radius: $radiusHeader;
+    border-bottom-right-radius: $radiusHeader;
+    position: relative;
+    transition: all 0.2s;
+
+    &::before {
+        content: '';
+        background: url('../img/topWaves.png') center center;
+        width: 100%;
+        height: 423px;
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        bottom: 0;
+
+        border-bottom-left-radius: $radiusHeader;
+        border-bottom-right-radius: $radiusHeader;
+    }
+
+    .navbar {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        color: $white;
+        font-size: 18px;
+        padding-top: 30px;
+        text-align: center;
+
+        .title {
+            display: inline;
+            width: 20%;
+            font-size: 24px;
+        }
+
+        ul {
+            display: inline-table;
+            width: 60%;
+
+            li {
+                color: #E1E1E1;
+                display: inline-block;
+                padding-left: 75px;
+                &.active {
+                    color: $white;
+                }
+            }
+        }
+
+        .social {
+            display: inline-block;
+            width: 20%;
+
+            a {
+                padding-left: 10px;
+                position: relative;
+                transition: all 0.2s;
+                top:0;
+                &:hover {
+                    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+                    // top: -5px;
+                    // color: rgba(0,0,0,0.5);
+                }
+            }
+        }
+    }
+
+    .content {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 50px;
+        position: relative;
+        z-index: 99;
+
+        .text {
+            width: 58%;
+            color:  $white;
+            margin-top: 35px;
+
+            h1 { font-size: 3em; }
+
+            p {
+                font-size: 1em;
+                padding-top: 30px;
+
+                .button { margin-top: 30px; }
+            }
+        }
+
+        .image { width: 40%; }
+
+    }
+}
+
+//Button styles
+.button {
+    transition: all 0.2s;
+    border-radius: 5px;
+    color: $white;
+    border: 0;
+    cursor: pointer;
+    padding: 15px 30px;
+
+    &:hover {
+        box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    }
+
+    &.orange {
+        background-color: $first;
+    }
+    &.blue {
+        background-color: $second;
+    }
+}
+
+//Phone screens
+.screen{
+    width: 200px;
+    height: 417px;
+    position: relative;
+
+    //Circles styles
+    .circle {
+        border-radius: 50%;
+        background: #FFFFFF;
+        color: #6CA3FF;
+        position: absolute;
+        text-align: center;
+
+        //Sizes
+        &.small {
+            width: 60px;
+            height: 60px;
+            line-height:  60px;
+        }
+
+        &.big {
+            width: 90px;
+            height: 90px;
+            line-height:  90px;
+        }
+
+        //Colors
+        &.one {
+            background: $first;
+            color: #FFF;
+        }
+        &.two {
+            background: $second;
+            color: #FFF;
+        }
+        &.three {
+            background: $third;
+            color: $primary ;
+        }
+        &.threeF {
+            background: $third;
+            color: #FFFFFF ;
+        }
+        &.four {
+            background: $fourth;
+            color: #FFFFFF;
+        }
+        &.five {
+            background: $fifth;
+            colo: #FFFFFF;
+        }
+        &.six {
+            background: $sixth;
+            color:#7E8C91;
+        }
+        &.seven {
+            background: $seventh;
+            color: #FFFFFF;
+        }
+
+        &.textSmall {
+            font-size: 24px;
+        }
+    }
+
+    //Screens
+    &.one {
+        background: url('../img/screenOne.png');
+        background-size: cover;
+    }
+    &.two {
+        background: url('../img/screenTwo.png');
+        background-size: cover;
+        // width: 240px;
+    }
+    &.three {
+        background: url('../img/screenThree.png');
+        background-size: cover;
+        // width: 240px;
+    }
+    &.four {
+        background: url('../img/screenFour.png');
+        background-size: cover;
+        // width: 240px;
+    }
+}
+
+.section {
+    padding: 150px 0;
+
+    .title {
+        color: $primary;
+        text-transform: uppercase;
+        font-size: 2em;
+        text-align: center;
+    }
+    .subtitle {
+        color: #999999;
+        text-align: center;
+        padding-top: 10px;
+    }
+    
+    .arrow {
+        font-size: 100px;
+        display: inline-block;
+        color: #C3CFE5;
+        position: relative;
+        top: -300px;
+    }
+    ul.widgets {
+        margin-left: auto;
+        margin-right: auto;
+        height: 656px;
+        display: inline-block;
+
+
+        li {
+            background: url('../img/widgets.png');
+            width: 370px;
+            height: 656px;
+            transform: scale(0.7);
+            display: inline-block;
+            position: relative;
+            transition: all 0.2s;
+
+            &:first-child {
+                left: 100px;
+            }
+            &:nth-child(2){
+                background-position-x: 370px;
+            }
+
+            &:last-child {
+                right: 100px;
+                background-position-x: 750px;
+            }
+
+
+            &.active {
+                transform: scale(1);
+                z-index: 1;
+                box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            }
+        }
+    }
+
+    .badges {
+        background: url('../img/badges.png');
+        width: 173px;
+        height: 82px;
+        padding-top: 20px;
+    }
+
+    .spacing {
+        padding-top: 150px;
+    }
+
+    .box {
+        padding-left: 10px;
+        h2 {
+            color: $secondary;
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 14px;
+            padding-top: 10px;
+            color: #AEAEAE;
+        }
+    }
+
+    .text {
+
+        width: 80%;
+        padding-left: 50px;
+        margin-top: -50px;
+
+        .icon {
+            background: url('../img/cIcons.png') no-repeat;
+            width: 137px;
+            height: 63px;
+            background-size: cover;
+
+            &.cloudy {
+                background-position-y: center;
+            }
+
+            &.sun {
+                background-position-y: top;
+                height: 62px;
+            }
+
+            &.rainy {
+                background-position-y: bottom;
+            }
+        }
+
+        h1 {
+            color: $primary;
+            font-size: 1.6em;
+            padding-top: 10px;
+        }
+
+        p {
+            color: $secondary;
+            font-size: 1em;
+            padding-top: 20px;
+        }
+    }
+
+    .block {
+        display: block;
+        margin-top: 80px;
+
+        blockquote {
+            display: table-cell;
+            width: 50%;
+            position: relative;
+
+            &::before {
+                content: " “ ";
+                color: $primary;
+                font-size: 7em;
+                position: absolute;
+                top: -60px;
+                left: -5px;
+            }
+
+            &::after {
+                content: " “ ";
+                color: $primary;
+                font-size: 7em;
+                position: absolute;
+                bottom: -35px;
+                right: 50px;
+                transform: rotate(180deg);
+            }
+
+            p {
+                font-size: 18px;
+                width: 90%;
+            }
+
+            small {
+                position: relative;
+                top: 10px;
+            }
+        }
+    }
+}
+
+.icons {
+    background: url('../img/icons.png') no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 38px;
+    position: relative;
+    top: -20px;
+
+    &.diamont {
+        background-position-y: top;
+    }
+
+    &.lax {
+        background-position-y: bottom;
+    }
+
+    &.drop {
+        background-position-y: center;
+    }
+}
+
+//Grids
+.content {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 0;
+
+    &.paddingless {
+        padding: 0;
+        padding-top: 50px;
+    }
+
+    &.widthless {
+        width: 65%;
+    }
+}
+.row {
+    display: flex;
+    position: relative;
+
+    &.spacing {
+        padding-top: 50px;
+    }
+
+    .col {
+      margin: auto;
+
+      &.pad {
+        padding: 20px;
+      }
+
+    }
+}
+
+footer {
+    position: relative;
+
+    &.top {
+        background: url('../img/bg_footer.png') $primary;
+        color: #FFFFFF;
+        font-size: 14px;
+        h1 {
+            font-size: 26px;
+        }
+        .screen {
+            background: url('../img/screenFive.png');
+            background-size: cover;
+            width: 40em;
+            height: 20em;
+        }
+
+    }
+
+    &.bottom {
+        background: $secondary;
+
+        .navbar {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            color: $white;
+            font-size: 14px;
+            text-align: center;
+            padding: 60px 0;
+
+            .title {
+                display: inline;
+                width: 20%;
+                color: $first;
+
+                span {
+                    color: $second;
+                }
+            }
+
+            ul {
+                display: inline-table;
+                width: 60%;
+
+                li {
+                    color: #B5B5C8;
+                    display: inline-block;
+                    padding-left: 35px;
+                }
+            }
+
+            .social {
+                display: inline-block;
+                width: 20%;
+                color: #B5B5C8;
+                text-align: right;
+                a {
+                    padding-left: 10px;
+                    position: relative;
+                    transition: all 0.2s;
+                    top: 0;
+
+                    &:hover { text-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+                }
+            }
+        }
+
+        hr {
+            width: 100%;
+            background: transparent;
+            border-top: 0;
+            border-color: #434769;
+            margin-bottom: 50px;
+        }
+
+        span {
+            font-size: 12px;
+            color: #565B87;
+        }
+
+        .content {
+            text-align: right;
+        }
+
+        .topper {
+            position: absolute;
+            background: #434769;
+            padding: 5px 10px;
+            bottom: 0;
+            right: 10px;
+            font-size: 24px;
+            color: #FFFFFF;
+            border-radius: 5px 5px 0 0;
+        }
+    }
+}

@@ -1,0 +1,275 @@
+<!-- @victoorlucas (found me on Github) -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FunWeather</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="src/css/funWeather.min.css" />
+    <!-- This is the FontAwesome, a lib that I use to include SVG/CSS icons on the page, but I can also create the icons using the pure CSS. -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="src/js/funweather.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="title">FUN WEATHER.</div>
+            <ul class="menu">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Download</a></li>
+            </ul>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </nav>
+
+        <div class="content row">
+            <div class="text col">
+                <h1>Get the most fun <br> weather app</h1>
+                <p>
+                    Simple, nice and user-friendly application of the weather. Only useful information
+                    <br>
+                    <button class="button orange">Download</button> <button class="button blue">Features</button>
+                </p>
+            </div>
+            <div class="image col">
+                <div class="screen one">
+                    <!-- I'm using "style" here because is more hard to add a class to ever circle. With this I can personalize more -->
+                    <div class="circle small" style="right: -90px; top: 10px;">9</div>
+                    <div class="circle big two" style="right: -120px; top: 120px;">LONDON</div>
+                    <div class="circle big one" style="left: -120px; bottom: 100px;">SUNNY</div>
+                    <div class="circle small three" style="right: -80px; bottom: -20px;">RIO</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="title">PERFECT FEATURES</div>
+        <div class="subtitle">Only necessary</div>
+
+        <div class="content">
+            <div class="row">
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col pad">
+                            <div class="icons diamont"></div>
+                        </div>
+                        <div class="col box">
+                            <h2>Usability</h2>
+                            <p>Sometimes the simplest things are the hardest to find. So we created a new line for everyday life</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col pad">
+                            <div class="icons lax"></div>
+                        </div>
+                        <div class="col box">
+                            <h2>Parallax Effect</h2>
+                            <p>Sometimes the simplest things are the hardest to find. So we created a new line for everyday life</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col pad">
+                            <div class="icons drop"></div>
+                        </div>
+                        <div class="col box">
+                            <h2>Unlimites Colors</h2>
+                            <p>Sometimes the simplest things are the hardest to find. So we created a new line for everyday life</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="title">SIMPLE WIDGETS</div>
+        <div class="subtitle">Drag and drop</div>
+
+        <div style="padding-top: 50px;"></div>
+
+        <a id="widgetLeft">
+            <i class="fas fa-angle-left arrow left"></i>
+        </a>
+        <ul class="widgets">
+            <li class="first wid"></li>
+            <li class="second wid active"></li>
+            <li class="third wid"></li>
+        </ul>
+
+        <a id="widgetRight">
+            <i class="fas fa-angle-right arrow right"></i>
+        </a>
+    </section>
+
+    <section class="section screenshots">
+        <div class="title">SCREENSHOTS</div>
+        <div class="subtitle">The brightest images</div>
+
+        <div class="content widthless">
+
+            <!-- Clody start -->
+            <div class="row">
+                <div class="col" style="width: 35%;">
+                    <div class="screen two">
+                        <div class="circle big threeF" style="right: -50px; top: 100px;">Cloudy</div>
+                        <div class="circle big four textSmall" style="left: -50px; top: 200px;">15°</div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="text">
+                        <div class="icon cloudy"></div>
+                        <h1>WHEN THE CLOUDS</h1>
+                        <p>Variable information on the air humidity, the feeling of the weather, and the ability to share this with your friends</p>
+                        <div class="badges"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Clody end -->
+
+            <div class="spacing"></div>
+
+            <!-- Sunny start -->
+            <div class="row">
+                <div class="col">
+                    <div class="text">
+                        <div class="icon sun"></div>
+                        <h1>WHEN THE SUN</h1>
+                        <p>Sometimes the simplest things are the hardest to find. So we created a new line for everyday life.</p>
+                        <div class="badges"></div>
+                    </div>
+                </div>
+
+                <div class="col" style="width: 35%;">
+                    <div class="screen three">
+                        <div class="circle big five" style="right: -50px; top: 100px;">Sunny</div>
+                        <div class="circle big one textSmall" style="left: -50px; top: 200px;">35°</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sunny end -->
+
+            <div class="spacing"></div>
+
+            <!-- Rainy start -->
+            <div class="row">
+                <div class="col" style="width: 35%;">
+                    <div class="screen two">
+                        <div class="circle big six" style="right: -50px; top: 100px;">Rainy</div>
+                        <div class="circle big four textSmall" style="left: -50px; top: 200px;">9°</div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="text">
+                        <div class="icon rainy"></div>
+                        <h1>WHEN THE RAINY</h1>
+                        <p>Variable information on the air humidity, the feeling of the weather, and the ability to share this with your friends</p>
+                        <div class="badges"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Rainy end -->
+
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="title">WHAT PEOPLE ARE SAYING</div>
+        <div class="subtitle">Reviews</div>
+
+        <div class="content">
+            <div class="block">
+                <blockquote>
+                    <p>The only courage that matters is the kind that gets you from one moment to the next.</p>
+                    <small>William Hazlitt</small>
+                </blockquote>
+
+                <blockquote>
+                    <p>No man has a good enough memory to be a successful liar. </p>
+                    <small>Abraham Lincoln</small>
+                </blockquote>
+            </div>
+
+            <div class="block">
+                <blockquote>
+                    <p>The only courage that matters is the kind that gets you from one moment to the next.</p>
+                    <small>William Hazlitt</small>
+                </blockquote>
+
+                <blockquote>
+                    <p>No man has a good enough memory to be a successful liar. </p>
+                    <small>Abraham Lincoln</small>
+                </blockquote>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer class="top">
+        <div class="content paddingless">
+            <div class="row">
+                <div class="col">
+                    <h1>HOW DOWNLOAD THE APP?</h1>
+
+                    <br>
+
+                    <p>
+                        Just download the app from the store.
+                        Simple, nice and user-friendly application of theweather. Only relevant and useful information.
+
+                        <br><br><br>
+
+                        <a href=""><img src="src/img/appstore.png" alt=""></a>
+                        <a href=""><img src="src/img/googleplay.png" alt=""></a>
+                    </p>
+
+                </div>
+                <div class="col">
+                    <div class="screen"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="bottom">
+        <nav class="navbar">
+            <div class="title">FUN  <span>WEATHER.</span></div>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Download</a></li>
+            </ul>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </nav>
+        <div class="content">
+            <hr>
+            <span>© 2016 All rights reserved. Weather App Theme by Gravpix - Write by Victor Lucas</span>
+        </div>
+
+        <div class="topper">
+            <i class="fas fa-angle-up"></i>
+        </div>
+    </footer>
+</body>
+</html>
